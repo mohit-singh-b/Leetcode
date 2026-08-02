@@ -8,18 +8,13 @@ int longestSubarray(int* nums, int numsSize, int limit) {
     for ( i = 0 ; i < numsSize ; i++){
       
         while ( head != tail && abs(nums[i] - nums[dq[head]] ) > limit ){
-
-            while(j <= dq[head]){
-                j++;
-            }
+            j = dq[head]+1;
             head++;
         }
 
         while ( headb != tailb && abs(nums[i] - nums[dqb[headb]] ) > limit ){
 
-            while(j <= dqb[headb]){
-                j++;
-            }
+            j = dqb[headb] +1;
             headb++;
         }
 
